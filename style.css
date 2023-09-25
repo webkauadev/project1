@@ -1,4 +1,4 @@
-/* Estilo básico para o layout */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #121212;
@@ -11,28 +11,24 @@ body {
     height: 100vh;
 }
 
-/* Estilo para os botões */
 img {
-    width: 20px; /* Tamanho dos botões */
+    width: 20px; 
     height: 20px;
     cursor: pointer;
-    margin: 5px; /* Espaçamento entre os botões */
-    transition: transform 0.2s ease-in-out; /* Efeito de transição suave */
+    margin: 5px; 
+    transition: transform 0.2s ease-in-out;
 }
 
-/* Estilo para os botões quando o mouse estiver sobre eles */
 img:hover {
-    transform: scale(1.2); /* Efeito de escala ao passar o mouse */
+    transform: scale(1.2); 
 }
 
-/* Estilo para os botões de reprodução (play, pause, anterior, próxima) */
 #playPause, #pause, #prev, #next {
     border-radius: 50%; /* Forma circular */
     background-color: #1DB954; /* Cor de fundo */
     padding: 10px; /* Espaçamento interno */
 }
 
-/* Estilo para os botões da div playlist controls */
 #shuffle,
 #repeat {
     width: 40px; /* Tamanho dos botões */
@@ -42,13 +38,11 @@ img:hover {
     transition: transform 0.2s ease-in-out; /* Efeito de transição suave */
 }
 
-/* Estilo para os botões da div playlist controls quando o mouse estiver sobre eles */
 #shuffle:hover,
 #repeat:hover {
     transform: scale(1.2); /* Efeito de escala ao passar o mouse */
 }
 
-/* Estilo para os botões de embaralhamento e repetição */
 #shuffle {
     border-radius: 50%; /* Forma circular */
     background-color: transparent; /* Sem cor de fundo */
@@ -67,7 +61,6 @@ img:hover {
 
 
 
-/* Estilo para o player */
 .player {
     display: flex;
     flex-direction: column;
@@ -80,7 +73,6 @@ img:hover {
     width: 300px;
 }
 
-/* Estilo para a barra de progresso */
 .progress-bar {
     width: 100%;
     height: 10px;
@@ -125,13 +117,11 @@ button:hover {
     margin-top: 10px;
 }
 
-/* Estilo para o player expandido */
 .expanded {
     flex-direction: row;
     width: 100%;
 }
 
-/* Estilo para a fila de músicas */
 #playlist {
     list-style-type: none;
     padding: 0;
@@ -154,7 +144,6 @@ button:hover {
     background-color: #444;
 }
 
-/* Estilo para botões de controle */
 #expand {
     background-color: transparent;
     color: #1DB954;
@@ -174,7 +163,6 @@ button:hover {
     color: #fff;
 }
 
-/* Estilo para o controle de volume */
 input[type="range"] {
     width: 100px;
     -webkit-appearance: none;
@@ -204,7 +192,6 @@ input[type="range"]::-moz-range-thumb {
     cursor: pointer;
 }
 
-/* Estilo para os botões de repetição e embaralhamento */
 #shuffle,
 #repeat {
     background-color: transparent;
