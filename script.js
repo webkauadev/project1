@@ -10,12 +10,10 @@ const repeatButton = document.getElementById("repeat");
 let isPlaying = false;
 let isExpanded = false;
 let isVolumeVisible = false;
-// Variáveis para controlar o estado do player
-let currentTrack = 0; // Índice da música atual na lista de reprodução
-let isShuffled = false; // Indica se a fila de músicas está embaralhada
-let isRepeating = false; // Indica se a música atual está em repetição
+let currentTrack = 0;
+let isShuffled = false; 
+let isRepeating = false; 
 
-// Array de músicas de exemplo (substitua com suas próprias músicas)
 const playlistItems = [
     "msc/By The Way.mp3",
     "msc/Californication.mp3",
@@ -29,7 +27,6 @@ const playlistItems = [
     "msc/Under The Bridge.mp3",
 ];
 
-// Função para reproduzir ou pausar a música
 function togglePlayPause() {
     const audio = document.getElementById("audio");
 
@@ -44,7 +41,6 @@ function togglePlayPause() {
     isPlaying = !isPlaying;
 }
 
-// Função para tocar a música anterior
 function playPrevious() {
     if (isShuffled) {
         currentTrack = getRandomTrackIndex();
@@ -68,10 +64,8 @@ function updateProgressBar() {
     }
 }
 
-// Atualize a barra de progresso a cada segundo
 setInterval(updateProgressBar, 1000);
 
-// Função para tocar a próxima música
 function playNext() {
     if (isShuffled) {
         currentTrack = getRandomTrackIndex();
@@ -82,36 +76,31 @@ function playNext() {
     playTrack(currentTrack);
 }
 
-// Função para definir o volume
 function setVolume() {
     const audio = document.getElementById("audio");
     audio.volume = volumeControl.value;
 }
 
-// Função para alternar entre o modo de repetição
 function toggleRepeat() {
     isRepeating = !isRepeating;
     const repeatIcon = isRepeating ? "🔁" : "🔂";
     repeatButton.textContent = repeatIcon;
 }
 
-// Função para embaralhar a fila de músicas
 function shufflePlaylist() {
     isShuffled = !isShuffled;
     const shuffleIcon = isShuffled ? "🔀" : "➡️";
     shuffleButton.textContent = shuffleIcon;
     
-    // Se estiver embaralhando, reordene a lista de reprodução aleatoriamente
     if (isShuffled) {
         playlistItems.sort(() => Math.random() - 0.5);
         currentTrack = 0;
     }
 }
 
-// Função para tocar uma música com base no índice
 function playTrack(trackIndex) {
     const audio = document.getElementById("audio");
-    audio.src = playlistItems[trackIndex]; // Substitua pelo caminho da sua música
+    audio.src = playlistItems[trackIndex]; 
     audio.load();
     audio.play();
     playPauseButton.textContent = "Pause";
@@ -120,17 +109,14 @@ function playTrack(trackIndex) {
     currentSongElement.textContent = playlistItems[trackIndex];
 }
 
-// Função para obter um índice de faixa aleatório
 function getRandomTrackIndex() {
     return Math.floor(Math.random() * playlistItems.length);
 }
 
-// Inicialização do player de áudio
 const audio = document.createElement("audio");
 audio.id = "audio";
 document.body.appendChild(audio);
 
-// Event listeners
 audio.addEventListener("ended", () => {
     if (isRepeating) {
         playTrack(currentTrack);
